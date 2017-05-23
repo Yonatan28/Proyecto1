@@ -10,8 +10,8 @@ namespace Proyecto1
         string tipopropiedad;
         string codigoinden;
         int metroscuadrados;
-        string nit;
-        string listaporcen;
+        string nitpropietario;
+        List<string> gastos;
 
         public string Tipopropiedad
         {
