@@ -12,7 +12,7 @@ namespace Proyecto1
         int metroscuadrados;
         string nitpropietario;
         List<string> gastos;
-
+        string listapor;
         public string Tipopropiedad
         {
             get
@@ -52,29 +52,42 @@ namespace Proyecto1
             }
         }
 
-        public string Nit
+        public string Nitpropietario
         {
             get
             {
-                return nit;
+                return nitpropietario;
             }
 
             set
             {
-                nit = value;
+                nitpropietario = value;
             }
         }
 
-        public string Listaporcen
+        public List<string> Gastos
         {
             get
             {
-                return listaporcen;
+                return gastos;
             }
 
             set
             {
-                listaporcen = value;
+                gastos = value;
+            }
+        }
+
+        public string Listapor
+        {
+            get
+            {
+                return listapor;
+            }
+
+            set
+            {
+                listapor = value;
             }
         }
     }

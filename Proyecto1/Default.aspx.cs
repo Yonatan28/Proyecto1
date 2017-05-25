@@ -83,8 +83,8 @@ namespace Proyecto1
                 Assembly _assembly; Stream _imageStream;
                 StreamReader _textStreamReader;
                 _assembly = Assembly.GetExecutingAssembly();
-                _imageStream = _assembly.GetManifestResourceStream("Proyecto1.gastos2.txt.bmp");
-                _textStreamReader = new StreamReader(_assembly.GetManifestResourceStream("Proyecto1.gastos2.txt.txt"));
+                _imageStream = _assembly.GetManifestResourceStream("Proyecto1.gastos2.bmp");
+                _textStreamReader = new StreamReader(_assembly.GetManifestResourceStream("Proyecto1.gastos2.txt"));
 
                 while (_textStreamReader.Peek() > -1)
                 {
@@ -102,17 +102,30 @@ namespace Proyecto1
                 Assembly _assembly; Stream _imageStream;
                 StreamReader _textStreamReader;
                 _assembly = Assembly.GetExecutingAssembly();
-                _imageStream = _assembly.GetManifestResourceStream("Proyecto1.gastos2.txt.bmp");
-                _textStreamReader = new StreamReader(_assembly.GetManifestResourceStream("Proyecto1.gastos2.txt.txt"));
+                _imageStream = _assembly.GetManifestResourceStream("Proyecto1.propiedades.bmp");
+                _textStreamReader = new StreamReader(_assembly.GetManifestResourceStream("Proyecto1.propiedades.txt"));
 
                 while (_textStreamReader.Peek() > -1)
                 {
-                    gastos2 gastostemp = new gastos2();
-                    gastostemp.Idgastos = _textStreamReader.ReadLine();
-                    gastostemp.Descripcion = _textStreamReader.ReadLine();
-                    gastostemp.Impote = Convert.ToInt32(_textStreamReader.ReadLine());
-                    gastostemp.Zonareparto = _textStreamReader.ReadLine();
-                    listagastos2.Add(gastostemp);
+                    if (_textStreamReader.ReadLine()=="L")
+                    {
+                        loca locatemp = new loca();
+                        locatemp.Tipopropiedad = _textStreamReader.ReadLine();
+                        locatemp.Codigoinden = _textStreamReader.ReadLine();
+                        locatemp.Metroscuadrados = Convert.ToInt32(_textStreamReader.ReadLine());
+                        locatemp.Nitpropietario = _textStreamReader.ReadLine();
+                        locatemp.Listapor= _textStreamReader.ReadLine();
+                        locatemp.Nombrecomercial = _textStreamReader.ReadLine();
+                        locatemp.Actividad = _textStreamReader.ReadLine();
+                    }
+                    if (_textStreamReader.ReadLine() == "G")
+                    {
+                        Garaje garatemp = new Garaje();
+                    }
+                    if (_textStreamReader.ReadLine() == "P")
+                    {
+                        piso pisotemp = new piso();
+                    }
                 }
                 _textStreamReader.Close();
             }
