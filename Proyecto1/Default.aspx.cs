@@ -107,24 +107,43 @@ namespace Proyecto1
 
                 while (_textStreamReader.Peek() > -1)
                 {
-                    if (_textStreamReader.ReadLine()=="L")
+                    string tipo= _textStreamReader.ReadLine();
+                    if (tipo == "L")
                     {
                         loca locatemp = new loca();
-                        locatemp.Tipopropiedad = _textStreamReader.ReadLine();
+                        locatemp.Tipopropiedad = tipo;
                         locatemp.Codigoinden = _textStreamReader.ReadLine();
                         locatemp.Metroscuadrados = Convert.ToInt32(_textStreamReader.ReadLine());
                         locatemp.Nitpropietario = _textStreamReader.ReadLine();
-                        locatemp.Listapor= _textStreamReader.ReadLine();
+                        locatemp.Listapor[0]= _textStreamReader.ReadLine();
                         locatemp.Nombrecomercial = _textStreamReader.ReadLine();
                         locatemp.Actividad = _textStreamReader.ReadLine();
+                        listalocal.Add(locatemp);
                     }
-                    if (_textStreamReader.ReadLine() == "G")
+                    if (tipo == "G")
                     {
                         Garaje garatemp = new Garaje();
+                        garatemp.Tipopropiedad = tipo;
+                        garatemp.Codigoinden = _textStreamReader.ReadLine();
+                        garatemp.Metroscuadrados = Convert.ToInt32(_textStreamReader.ReadLine());
+                        garatemp.Nitpropietario = _textStreamReader.ReadLine();
+                        garatemp.Listapor[0] = _textStreamReader.ReadLine();
+                        garatemp.Abierta = _textStreamReader.ReadLine();
+                        garatemp.Bodega = _textStreamReader.ReadLine();
+                        listagaraje.Add(garatemp);
+
                     }
-                    if (_textStreamReader.ReadLine() == "P")
+                    if (tipo == "P")
                     {
                         piso pisotemp = new piso();
+                        pisotemp.Tipopropiedad = tipo;
+                        pisotemp.Codigoinden = _textStreamReader.ReadLine();
+                        pisotemp.Metroscuadrados = Convert.ToInt32(_textStreamReader.ReadLine());
+                        pisotemp.Nitpropietario = _textStreamReader.ReadLine();
+                        pisotemp.Listapor[0] = _textStreamReader.ReadLine();
+                        pisotemp.Vhvn= _textStreamReader.ReadLine();
+                        pisotemp.Habitacion= _textStreamReader.ReadLine();
+                        listapiso.Add(pisotemp);
                     }
                 }
                 _textStreamReader.Close();

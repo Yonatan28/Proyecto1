@@ -12,7 +12,7 @@ namespace Proyecto1
         int metroscuadrados;
         string nitpropietario;
         List<string> gastos;
-        string listapor;
+        List<string> listapor;
         public string Tipopropiedad
         {
             get
@@ -78,7 +78,7 @@ namespace Proyecto1
             }
         }
 
-        public string Listapor
+        public List<string> Listapor
         {
             get
             {
